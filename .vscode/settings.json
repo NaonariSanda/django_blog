@@ -1,0 +1,19 @@
+{
+    // "python.jediEnabled": true,
+    "python.analysis.extraPaths": [
+        "./source"],
+    
+
+    "[json]": {
+        
+
+        "editor.quickSuggestions": {
+            "strings": true
+        },
+        "editor.suggest.insertMode": "replace"
+    },
+    "editor.formatOnSave": true,
+    
+    "beautify.config": ""
+    
+}
