@@ -46,6 +46,26 @@
                     </li>
                 </ul>
             </div>
+            <div class="collapse navbar-collapse ms-auto" id="navbarExample01 acount">
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    {% if request.user.is_authenticated %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="">{{ request.user }}</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'myapp:logout' %}">Logout</a>
+                    </li>
+                    {% else %}
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'myapp:login' %}">Login</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{% url 'myapp:singup' %}">Register</a>
+                    </li>
+                    {% endif %}
+                </ul>
+            </div>
+            <p class="ms-auto" hreflang="ar"></p>
         </div>
     </nav>
     <!-- Navbar -->
@@ -106,8 +126,6 @@
     </footer>
     <!-- End your project here-->
 
-    <!-- MDB -->
-    <script type="text/javascript" src="js/mdb.min.js"></script>
     <!-- Custom scripts -->
     <script type="text/javascript"></script>
 </body>
