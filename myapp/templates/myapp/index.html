@@ -28,15 +28,19 @@
   {% for item in post_list %}
   <div class="col">
     <div class="card">
-      <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="..." />
+      {% if item.thumbnail %}
+      <img src="{{ item.thumbnail.url }}" class="card-img-top" alt="{{ item.title }}"
+        style="max-width: 400px; max-height: 250px;" />
+      {% else %}
+      <img src="https://mdbootstrap.com/img/new/standard/nature/184.jpg" class="card-img-top" alt="{{ item.title }}"
+        style="max-width: 400px; max-height: 250px;" />
+      {% endif %}
+
       <div class="card-body">
-        <h5 class="card-title">{{ item.title}}</h5>
+        <h5 class="card-title">{{ item.title | truncatechars:12 }}</h5>
         <p><small>投稿者：{{ item.author }}</small></p>
         <p><small>カテゴリ：{{ item.category }}</small></p>
-        <p class="card-text">
-          Some quick example text to build on the card title and make up the bulk of the
-          card's content.
-        </p>
+        <p class="card-text">{{ item.content | truncatechars:50 }}</p>
         <a href="{% url 'myapp:post_detail' item.id %}" type="button" class="btn btn-primary">もっと読む</a>
       </div>
     </div>
