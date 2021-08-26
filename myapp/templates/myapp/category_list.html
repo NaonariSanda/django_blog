@@ -1,0 +1,23 @@
+{% extends "myapp/base.html" %}
+
+{% block content %}
+
+<div class="row my-5">
+    <div class="col-md-9 mx-auto">
+        <br>
+        <h2>Category一覧</h2>
+        <br>
+
+        {% for item in category_list %}
+
+        <br>
+        <a href="{% url 'myapp:category_detail' item.name_en %}">{{ item.name }}</a>
+        <br>
+
+        {% endfor %}
+
+        <br>
+    </div>
+</div>
+
+{% endblock %}

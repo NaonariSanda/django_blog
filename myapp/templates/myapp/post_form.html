@@ -8,11 +8,18 @@
         <h2>Post登録・更新</h2>
         <br>
 
-        <form action="" method="post">
+        <form action="" method="post" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="form-group">
                 <label>タイトル</label>
                 {{ form.title }}
+            </div>
+
+            <br>
+
+            <div class="form-group">
+                <label>カテゴリー</label>
+                {{ form.category }}
             </div>
 
             <br>

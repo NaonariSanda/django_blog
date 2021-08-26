@@ -13,4 +13,7 @@ urlpatterns = [
     path('login', views.Login.as_view(), name='login'),
     path('logout', views.Logout.as_view(), name='logout'),
     path('singup', views.SingUp.as_view(), name='singup'),
+    path('like/<int:post_id>', views.Like_add, name='like_add'),
+    path('category', views.CategoryList.as_view(), name='category_list'),
+    path('category_detail/<str:name_en>', views.CategoryDetail.as_view(), name='category_detail'),
 ]
